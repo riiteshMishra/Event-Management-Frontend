@@ -1,15 +1,22 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import PageNotFound from "./pages/PageNotFound";
+import About from "./pages/About";
+import Header from "./components/core/Header/Index";
 
 const App = () => {
   return (
-    <div className=" text-accent">
-      {" "}
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-      voluptate autem ex temporibus veritatis quae eum, rerum, numquam
-      laudantium impedit deleniti, quod culpa optio? In doloremque a reiciendis
-      psa veritatis blanditiis repellat omnis molestiae quos, similique
-      aspernatur quis, quo nobis ipsum aperiam porro neque! Dicta, voluptates
-      eos.
+    <div className="App_Entry min-h-screen w-full bg-primary overflow-x-hidden relative z-0">
+      <Header />
+      <Routes>
+        <Route path="*" element={<PageNotFound />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/events" />
+        <Route path="/gallery" />
+        <Route path="/contact" />
+      </Routes>
     </div>
   );
 };

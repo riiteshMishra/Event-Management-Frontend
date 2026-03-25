@@ -4,12 +4,25 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+html {
+  overflow-x: hidden;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
 @theme {
   --max-width: 81rem;
 
   /* base colors */
-  --color-bg-light: #eaefef;
-  --color-bg-dark: #091413;
+  --color-light: #eaefef;
+  --color-dark: #091413;
 
   --color-surface-light: #bfc9d1;
   --color-surface-dark: #213c51;
@@ -21,7 +34,7 @@
   /* extra UI colors */
   --color-muted: #3b4953;
   --color-soft: #f5afaf;
-  
+
   /* Font System */
 
   --font-heading: "Archivo Black", sans-serif;
@@ -41,4 +54,28 @@
 
   --font-hindi: "Noto Sans Devanagari", sans-serif;
   /* Hindi / Devanagari font – best for Hindi text */
+}
+
+/* container */
+.container {
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* responsive padding */
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
