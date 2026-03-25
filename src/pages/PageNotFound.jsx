@@ -22,7 +22,7 @@ const childVariants = {
 
 const PageNotFound = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[var(--color-bg-light)] dark:bg-[var(--color-bg-dark)] px-4">
+    <div className="min-h-screen flex items-center justify-center bg-light dark:bg-dark px-4">
       
       <motion.div
         variants={parentVariants}
@@ -40,7 +40,7 @@ const PageNotFound = () => {
             height="220"
             viewBox="0 0 24 24"
             fill="none"
-            className="text-[var(--color-primary)]"
+            className="text-primary"
           >
             <circle
               cx="12"
@@ -67,7 +67,7 @@ const PageNotFound = () => {
         {/* 404 Text */}
         <motion.h1
           variants={childVariants}
-          className="text-6xl font-bold font-[var(--font-heading)] text-[var(--color-primary)]"
+          className="text-6xl font-bold text-primary"
         >
           404
         </motion.h1>
@@ -75,7 +75,7 @@ const PageNotFound = () => {
         {/* Message */}
         <motion.p
           variants={childVariants}
-          className="text-lg font-[var(--font-body)] text-[var(--color-muted)]"
+          className="text-lg font-(--font-body) text-muted"
         >
           Oops! Page not found 😕
         </motion.p>
@@ -84,7 +84,7 @@ const PageNotFound = () => {
         <motion.div variants={childVariants}>
           <Link
             to="/"
-            className="inline-block px-6 py-3 rounded-lg bg-[var(--color-primary)] text-white font-[var(--font-ui)] hover:scale-105 transition"
+            className="inline-block px-6 py-3 rounded-lg bg-primary text-white font-(--font-ui) hover:scale-105 transition"
           >
             Go Back Home
           </Link>
