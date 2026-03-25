@@ -1,1 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Serif+Text:ital@0;1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Noto+Sans+Devanagari:wght@100..900&display=swap");
+
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --max-width: 81rem;
+
+  /* base colors */
+  --color-bg-light: #eaefef;
+  --color-bg-dark: #091413;
+
+  --color-surface-light: #bfc9d1;
+  --color-surface-dark: #213c51;
+
+  /* primary + accent */
+  --color-primary: #408a71;
+  --color-accent: #ff9b51;
+
+  /* extra UI colors */
+  --color-muted: #3b4953;
+  --color-soft: #f5afaf;
+  
+  /* Font System */
+
+  --font-heading: "Archivo Black", sans-serif;
+  /* Bold headings (English) – heavy, strong titles ke liye */
+
+  --font-subheading: "DM Serif Text", serif;
+  /* Stylish headings – thoda premium / editorial look (English) */
+
+  --font-body: "Poppins", sans-serif;
+  /* Main content (English) – clean, modern, readable */
+
+  --font-ui: "Rubik", sans-serif;
+  /* UI elements – buttons, navbar, labels (multi-language friendly but Hindi perfect nahi) */
+
+  --font-alt: "Roboto", sans-serif;
+  /* Alternative font – fallback ya secondary text (multi-language support better than Poppins) */
+
+  --font-hindi: "Noto Sans Devanagari", sans-serif;
+  /* Hindi / Devanagari font – best for Hindi text */
+}
