@@ -6,7 +6,7 @@ import Hamburger from "../../common/Hamburger";
 
 const Header = () => {
   return (
-    <div className=" dark:bg-dark bg-light z-999 relative">
+    <div className=" dark:bg-dark bg-white z-999 relative">
       <div className="flex items-center justify-between container py-4">
         
         <div className="flex items-center gap-x-4">
