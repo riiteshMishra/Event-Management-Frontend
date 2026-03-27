@@ -1,3 +1,4 @@
+import Footer from "../components/core/Footer/Index";
 import Announcement from "../components/core/Home/Announcement";
 import Grampradhan from "../components/core/Home/Grampradhan";
 import ImageSwiper from "../components/core/Home/Swiper";
@@ -7,13 +8,14 @@ import Welcome from "../components/core/Home/Welcome";
 
 const Home = () => {
   return (
-    <div>
+    <section className="Home">
       <ImageSwiper />
       <Welcome />
       <VillageInfo />
       <Grampradhan />
       <Announcement/>
-    </div>
+      <Footer/>
+    </section>
   );
 };
 
