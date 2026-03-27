@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const AchievementImages = ({ data }) => {
   return (
-    <div className=" my-10">
+    <div className=" py-10">
       <section className="flex flex-wrap gap-10 items-center sm:justify-start justify-center">
         {data.map((item, index) => (
           <motion.figure

@@ -128,7 +128,7 @@ export const grampradhanInfo = {
 
         number: "+91 9876543210",
         email: "ramprasad@example.com",
-        address: "Gram Sabha Balua, Fatehpur",
+        address: "Gram Sabha Balua, kushinagar",
 
         message: "We will work together for the development of our village.",
 
@@ -141,3 +141,30 @@ export const grampradhanInfo = {
         }
     }
 };
+
+export const announcements = [
+    {
+        id: 1,
+        hindi: " पंचायत बैठक रविवार को होगी",
+        english: " Panchayat meeting will be held on Sunday",
+        type: "meeting",
+        date: "2026-04-01",
+        important: true
+    },
+    {
+        id: 2,
+        hindi: " नई सड़क निर्माण स्वीकृत",
+        english: " New road construction approved",
+        type: "development",
+        date: "2026-04-03",
+        important: true
+    },
+    {
+        id: 3,
+        hindi: " होली समारोह में सभी आमंत्रित हैं",
+        english: " Everyone is invited to the Holi celebration",
+        type: "event",
+        date: "2026-04-05",
+        important: false
+    }
+];

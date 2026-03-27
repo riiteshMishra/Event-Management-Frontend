@@ -38,7 +38,7 @@ const Grampradhan = () => {
   const data = grampradhanInfo[selectedLang];
 
   return (
-    <div className="bg-light dark:bg-gray-800 my-10 py-10 transition-colors duration-300">
+    <div className="bg-light dark:bg-dark/90 mt-10 pt-10 transition-colors duration-300">
       <motion.section
         className="container"
         variants={containerVariant}

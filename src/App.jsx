@@ -14,7 +14,7 @@ const App = () => {
   }, [theme]);
 
   return (
-    <div className="App_Entry min-h-screen w-full bg-light dark:bg-gray-800 overflow-x-hidden relative z-0">
+    <div className="App_Entry min-h-screen w-full bg-light dark:bg-dark/90 overflow-x-hidden relative z-0">
       <Header />
       <Routes>
         <Route path="*" element={<PageNotFound />} />

@@ -15,7 +15,7 @@ const ImageSwiper = () => {
         disableOnInteraction: false,
       }}
       loop={true}
-      className="mySwiper container sm:my-10 my-0 rounded-lg overflow-hidden shadow-2xl shadow-accent"
+      className="mySwiper container w-11/12 sm:my-10 my-5 rounded-lg overflow-hidden shadow-xl shadow-accent"
     >
       {sliderImages.map((image) => (
         <SwiperSlide key={image.id}>
