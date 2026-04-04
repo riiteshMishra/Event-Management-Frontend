@@ -1,11 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useCounter = ({
-  end,
-  start = 0,
-  duration = 2000,
-  delay = 1,
-}) => {
+const useCounter = ({ end, start = 0, duration = 2000, delay = 1 }) => {
   const [count, setCount] = useState(start);
 
   useEffect(() => {

@@ -14,6 +14,7 @@ const Home = () => {
       <VillageInfo />
       <Grampradhan />
       <Announcement/>
+      {/* <img src="image1.jpg" className="w-100"/> */}
       <Footer/>
     </section>
   );

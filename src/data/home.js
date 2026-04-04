@@ -74,23 +74,23 @@ export const grampradhanInfo = {
         achievementImages: [
             {
                 title: "Toilet (Swachh Bharat)",
-                image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952"
+                image: "/pradhan/achivments/sauchalay.jpg"
             },
             {
                 title: "Street Light",
-                image: "https://images.unsplash.com/photo-1509395176047-4a66953fd231"
+                image: "/pradhan/achivments/streetlight.jpg"
             },
             {
                 title: "Road Construction",
-                image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994"
+                image: "/pradhan/achivments/roadcunstruction.jpg"
             },
             {
                 title: "Water Pump",
-                image: "https://images.unsplash.com/photo-1598514983318-2f64f8f4796c"
+                image: "/pradhan/achivments/hand-pump.jpg"
             },
             {
                 title: "School",
-                image: "https://images.unsplash.com/photo-1588072432836-e10032774350"
+                image: "/pradhan/achivments/govt-schools.jpg"
             }
         ],
         vision: "Digital village and transparent governance",

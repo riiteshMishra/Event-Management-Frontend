@@ -17,6 +17,7 @@ const AchievementImages = ({ data }) => {
             {/* Image */}
             <motion.img
               src={item.image}
+              loading="lazy"
               alt={item.title}
               className="w-full h-full object-cover object-center transition duration-300 group-hover:scale-110"
               title={item.title }
