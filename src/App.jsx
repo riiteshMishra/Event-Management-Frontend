@@ -5,6 +5,7 @@ import PageNotFound from "./pages/PageNotFound";
 import About from "./pages/About";
 import Header from "./components/core/Header/Index";
 import { useSelector } from "react-redux";
+import Event from "./pages/Event";
 
 const App = () => {
   const { theme } = useSelector((state) => state.theme);
@@ -20,7 +21,7 @@ const App = () => {
         <Route path="*" element={<PageNotFound />} />
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/events" />
+        <Route path="/events" element={<Event/>}/>
         <Route path="/gallery" />
         <Route path="/contact" />
       </Routes>

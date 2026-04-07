@@ -1,11 +1,11 @@
-export const sliderImages = [
+export const landingImages = [
     {
         id: 1,
-        url: "https://res.cloudinary.com/dwpplwqzs/image/upload/v1774677448/image_2_u9we0x.jpg",
+        url: "/village_files/image_1.jpg",
     },
     {
         id: 2,
-        url: "https://res.cloudinary.com/dwpplwqzs/image/upload/v1774677222/image_1_p7mbwm.jpg",
+       url: "/village_files/image_2.jpg",
     },
 
 ];

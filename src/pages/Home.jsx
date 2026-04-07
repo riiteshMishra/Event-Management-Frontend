@@ -5,16 +5,16 @@ import ImageSwiper from "../components/core/Home/Swiper";
 import VillageInfo from "../components/core/Home/VillageInfo";
 
 import Welcome from "../components/core/Home/Welcome";
+import { landingImages } from "../data/home";
 
 const Home = () => {
   return (
     <section className="Home">
-      <ImageSwiper />
+      <ImageSwiper data={landingImages}/>
       <Welcome />
       <VillageInfo />
       <Grampradhan />
       <Announcement/>
-      {/* <img src="image1.jpg" className="w-100"/> */}
       <Footer/>
     </section>
   );

@@ -1,0 +1,42 @@
+export const dummyEvents = [
+  {
+    id: 1,
+    title: "Tech Meetup 2026",
+    description: "Developers meetup for networking and learning.",
+    date: "2026-04-10",
+    location: "Varanasi",
+    image: "https://images.unsplash.com/photo-1515169067865-5387ec356754",
+  },
+  {
+    id: 2,
+    title: "React Bootcamp",
+    description: "Learn React from basics to advanced.",
+    date: "2026-04-15",
+    location: "Online",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+  },
+  {
+    id: 3,
+    title: "Startup Networking",
+    description: "Meet founders and investors.",
+    date: "2026-04-20",
+    location: "Delhi",
+    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df",
+  },
+  {
+    id: 4,
+    title: "Hackathon 48hrs",
+    description: "Build amazing projects in 48 hours.",
+    date: "2026-04-25",
+    location: "Bangalore",
+    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
+  },
+  {
+    id: 5,
+    title: "AI Workshop",
+    description: "Hands-on session on AI tools.",
+    date: "2026-05-01",
+    location: "Mumbai",
+    image: "https://images.unsplash.com/photo-1526378722484-bd91ca387e72",
+  },
+];

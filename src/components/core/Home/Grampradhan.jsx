@@ -61,6 +61,7 @@ const Grampradhan = () => {
           <motion.img
             src={data.photo}
             alt={data.name}
+            loading="lazy"
             className="w-60 h-60 object-cover rounded-full border-4 border-amber-400"
             whileHover={{ scale: 1.05 }}
           />
