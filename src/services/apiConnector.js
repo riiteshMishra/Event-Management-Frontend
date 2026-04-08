@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const BACKEND_URL = 'http://localhost:4000/api/v1'
+const BACKEND_URL = 'https://event-management-system-tyz7.onrender.com/api/v1'
 
 // instence banao
 const axiosInstance = axios.create({

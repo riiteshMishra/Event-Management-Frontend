@@ -6,17 +6,37 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 const ImageSwiper = ({ data }) => {
-  if (!data) return <p>sorry, please provide a image src</p>;
+  if (!data || data.length === 0) {
+    return (
+      <div className=" mx-auto w-11/12 sm:my-10 my-5 rounded-lg overflow-hidden shadow-xl shadow-accent relative">
+        <div className="absolute inset-0 flex items-center justify-center z-10">
+          <motion.p
+            className="text-3xl sm:text-4xl font-mono text-dark font-semibold  rounded-lg backdrop-blur-sm"
+            initial={{ y: 30, opacity: 0, scale: 0.6 }}
+            animate={{ y: 0, opacity: 1, scale: 1 }}
+            transition={{
+              duration: 0.4,
+              ease: "easeOut",
+            }}
+          >
+           Image Data not found
+          </motion.p>
+        </div>
+        <div className="w-full h-80 bg-gray-300 animate-pulse rounded-lg" />
+      </div>
+    );
+  }
 
   return (
     <motion.div
-      initial={{ y: 200, scale: 0.6, rotate: -5 }}
-      animate={{ y: 0, scale: 1, rotate: 0 }}
+      initial={{ y: 20, scale: 0.7, opacity: 0.8, rotate: -0.7 }}
+      whileInView={{ y: 0, scale: 1, rotate: 0, opacity: 1 }}
       transition={{
         duration: 0.3,
         type: "spring",
-        damping: 18,
-        stiffness: 300,
+        ease: "easeInOut",
+        damping: 20,
+        stiffness: 200,
       }}
     >
       <Swiper
