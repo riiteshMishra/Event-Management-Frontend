@@ -34,7 +34,7 @@ const Announcement = () => {
   const selectedLang = langMap[language] || "english";
 
   return (
-    <div className="bg-light dark:bg-dark/70 text-dark dark:text-light">
+    <div className=" text-dark dark:text-light">
       <div className=" py-10 transition ">
         <div className="container">
           {/* Heading */}

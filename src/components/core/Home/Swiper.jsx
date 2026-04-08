@@ -19,7 +19,7 @@ const ImageSwiper = ({ data }) => {
               ease: "easeOut",
             }}
           >
-           Image Data not found
+            Image Data not found
           </motion.p>
         </div>
         <div className="w-full h-80 bg-gray-300 animate-pulse rounded-lg" />
@@ -47,7 +47,7 @@ const ImageSwiper = ({ data }) => {
           disableOnInteraction: false,
         }}
         loop={true}
-        className="mySwiper container w-11/12 sm:my-10 my-5 rounded-lg overflow-hidden shadow-xl shadow-accent"
+        className="mySwiper container w-11/12 rounded-lg overflow-hidden shadow-black dark:shadow-white shadow-[0px_2px_12px]"
       >
         {data?.map((image) => (
           <SwiperSlide key={image.id}>

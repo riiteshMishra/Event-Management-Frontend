@@ -38,7 +38,7 @@ const Grampradhan = () => {
   const data = grampradhanInfo[selectedLang];
 
   return (
-    <div className="bg-light dark:bg-dark/90 mt-10 pt-10 transition-colors duration-300">
+    <div className="mt-10 pt-10 transition-colors duration-300">
       <motion.section
         className="container"
         variants={containerVariant}
@@ -51,7 +51,7 @@ const Grampradhan = () => {
         <motion.div
           variants={itemVariant}
           className="flex flex-col md:flex-row items-center gap-8 
-          bg-white dark:bg-gray-800 
+          bg-white dark:bg-dark 
           p-6 rounded-2xl shadow-xl 
           justify-center 
           hover:shadow-amber-300/30 
@@ -113,7 +113,7 @@ const Grampradhan = () => {
         <motion.div
           variants={itemVariant}
           className="mt-8 text-center space-y-3 
-          bg-white/70 dark:bg-gray-800/70 
+          bg-white dark:bg-dark
           backdrop-blur-md p-6 rounded-xl shadow-lg 
           text-gray-800 dark:text-gray-100"
         >

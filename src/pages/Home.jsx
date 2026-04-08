@@ -9,13 +9,15 @@ import { landingImages } from "../data/home";
 
 const Home = () => {
   return (
-    <section className="Home">
-      <ImageSwiper data={landingImages}/>
-      <Welcome />
-      <VillageInfo />
-      <Grampradhan />
-      <Announcement/>
-      <Footer/>
+    <section className="HomePage min-h-screen w-full bg-light dark:bg-dark/95  ">
+      <div className="py-7">
+        <ImageSwiper data={landingImages} />
+        <Welcome />
+        <VillageInfo />
+        <Grampradhan />
+        <Announcement />
+      </div>
+      <Footer />
     </section>
   );
 };

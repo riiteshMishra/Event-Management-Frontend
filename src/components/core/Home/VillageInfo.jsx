@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useMemo } from "react";
 import { motion, useInView } from "framer-motion";
 import { villageInfo } from "../../../data/home";
 import useCounter from "../../../hooks/useCounter";
@@ -7,7 +7,7 @@ const containerVariant = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.15,
     },
   },
 };
@@ -18,7 +18,7 @@ const itemVariant = {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 0.4,
+      duration: 0.35,
       ease: "easeOut",
     },
   },
@@ -28,68 +28,71 @@ const VillageInfo = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
-  const Population = useCounter({
+  // 🔥 counters
+  const population = useCounter({
     end: isInView ? villageInfo.population : 0,
     duration: 2000,
   });
 
-  const Households = useCounter({
+  const households = useCounter({
     end: isInView ? villageInfo.households : 0,
     duration: 2000,
   });
 
+  // 🔥 data array (clean + reusable)
+  const stats = useMemo(() => [
+    {
+      label: "Population",
+      value: `${population.toLocaleString()}+`,
+    },
+    {
+      label: "Households",
+      value: `${households.toLocaleString()}+`,
+    },
+    {
+      label: "District",
+      value: villageInfo.district,
+    },
+    {
+      label: "State",
+      value: villageInfo.state,
+    },
+  ], [population, households]);
+
   return (
-    <div ref={ref} className="dark:bg-teal-900 bg-dark/10 py-5 overflow-hidden">
+    <section
+      ref={ref}
+      className="py-6 overflow-hidden"
+    >
       <div className="container">
         <motion.div
-          className="flex justify-between gap-x-10 gap-y-5 flex-wrap flex-col sm:flex-row"
+          className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
           variants={containerVariant}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
         >
-          <motion.p
-            variants={itemVariant}
-            className="flex items-center gap-2 py-5 px-5 bg-mist-500 rounded-xl shadow-md hover:scale-105 transition font-bold text-dark dark:text-light"
-          >
-            Population:
-            <span className="text-amber-300 font-sans text-2xl">
-              {Population.toLocaleString()}+
-            </span>
-          </motion.p>
+          {stats.map((item, i) => (
+            <motion.div
+              key={i}
+              variants={itemVariant}
+              whileHover={{ scale: 1.05, y: -3 }}
+              className="flex flex-col gap-1 p-5 bg-mist-500 rounded-xl shadow-md cursor-pointer"
+            >
+              {/* Label */}
+              <p className="font-semibold text-dark dark:text-light">
+                {item.label}
+              </p>
 
-          <motion.p
-            variants={itemVariant}
-            className="py-5 px-5 bg-mist-500 rounded-xl shadow-md hover:scale-105 transition font-bold text-dark dark:text-light"
-          >
-            Households:
-            <span className="text-amber-300 font-sans text-2xl ml-2">
-              {Households.toLocaleString()}+
-            </span>
-          </motion.p>
-
-          <motion.p
-            variants={itemVariant}
-            className="py-5 px-5 bg-mist-500 rounded-xl shadow-md hover:scale-105 transition font-bold text-dark dark:text-light"
-          >
-            District:
-            <span className="text-amber-300 font-sans text-2xl ml-2">
-              {villageInfo.district}
-            </span>
-          </motion.p>
-
-          <motion.p
-            variants={itemVariant}
-            className="py-5 px-5 bg-mist-500 rounded-xl shadow-md hover:scale-105 transition font-bold text-dark dark:text-light"
-          >
-            State:
-            <span className="text-amber-300 font-sans text-2xl ml-2">
-              {villageInfo.state}
-            </span>
-          </motion.p>
+              {/* Value */}
+              <span className="text-amber-300 font-sans text-2xl">
+                {item.value}
+              </span>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
 
