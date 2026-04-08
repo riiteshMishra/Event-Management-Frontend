@@ -14,7 +14,7 @@ const Footer = () => {
   const data = footerData[selectedLang];
 
   return (
-    <footer className="bg-light dark:bg-accent/60 text-dark dark:text-light pt-10">
+    <footer className="bg-white dark:bg-dark/96 text-dark dark:text-light pt-10">
       <div className="container">
         <motion.div
           className="grid md:grid-cols-3 gap-8"
