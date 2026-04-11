@@ -81,7 +81,7 @@ body {
 }
 
 /* Button.jsx */
-/* From Uiverse.io by vinodjangid07 */ 
+/* From Uiverse.io by vinodjangid07 */
 .bookmarkBtn {
   width: 100px;
   height: 40px;
@@ -140,4 +140,9 @@ body {
 .bookmarkBtn:active {
   transform: scale(0.95);
   transition-duration: 0.3s;
+}
+
+/* Scroll bar */
+html::-webkit-scrollbar {
+  display: none;
 }

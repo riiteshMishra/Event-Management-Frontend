@@ -7,6 +7,7 @@ import { langMap } from "../../../utils/helper";
 // ICONS
 import { FaPhone, FaEnvelope } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
+import QuickLinks from "./QuickLinks";
 
 const Footer = () => {
   const { language } = useSelector((state) => state.language);
@@ -32,7 +33,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div>
+          {/* <div>
             <h3 className="text-xl font-bold mb-3">
               {selectedLang === "hindi" ? "त्वरित लिंक" : "Quick Links"}
             </h3>
@@ -46,7 +47,8 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
+          <QuickLinks/>
 
           {/* Contact */}
           <div>
