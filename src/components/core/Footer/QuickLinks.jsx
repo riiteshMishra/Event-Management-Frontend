@@ -14,6 +14,7 @@ const QuickLinks = () => {
         { id: 2, path: "/events", title: "Events" },
         { id: 3, path: "/about", title: "About" },
         { id: 4, path: "/contact", title: "Contact" },
+        { id: 4, path: "/gallery", title: "gallery" },
         { id: 5, path: "/terms", title: "Terms & Conditions" },
         { id: 6, path: "/privacy-policy", title: "Privacy Policy" },
     ];
@@ -23,7 +24,7 @@ const QuickLinks = () => {
             <h3 className="font-semibold text-lg">Quick Links</h3>
 
             <LayoutGroup>
-                <ul className="flex flex-wrap">
+                <ul className="flex flex-wrap py-4">
                     {quickLinks.map(link => (
                         <li key={link.id} className="relative list-none">
 
