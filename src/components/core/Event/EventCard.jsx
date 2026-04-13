@@ -7,13 +7,17 @@ import NoEvents from "./NoEvents";
 const EventCard = () => {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(false);
-
+  
   useEffect(() => {
     const eventFetch = async () => {
-      setLoading(true);
-      const result = await getEvents();
-      setLoading(false);
-      setEvents(result ? result : []);
+      let result;
+      try {
+        setLoading(true);
+        result = await getEvents();
+      } finally {
+        setEvents(result ? result : []);
+        setLoading(false);
+      }
     };
     eventFetch();
   }, []);
