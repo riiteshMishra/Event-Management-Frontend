@@ -1,37 +1,50 @@
 import React from 'react'
 import Footer from '../components/core/Footer/Index'
 import Introduction from '../components/core/About/Introduction'
-
-// FIX: SEO ke liye Helmet add kiya
 import { Helmet } from "react-helmet-async"
 import Vision from '../components/core/About/Vision'
+import Features from '../components/core/About/Features'
+import AboutDev from '../components/core/About/Dev'
+import TechStack from '../components/core/About/TechStack'
 
 const About = () => {
   return (
     <>
-      {/* Page level SEO */}
+      {/* Page SEO */}
       <Helmet>
-        <title>About | Event Management System</title>
+        <title>About | Village Event Management System</title>
+
         <meta 
           name="description" 
-          content="Learn more about our Event Management System, features, and developer." 
+          content="A simple event management system designed for villages like Belwa, Balua, and Bhitiyahawa to manage local events and gatherings easily." 
         />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Village Event Management System" />
+        <meta 
+          property="og:description" 
+          content="Manage village events like weddings, festivals, and meetings easily." 
+        />
+        <meta property="og:type" content="website" />
       </Helmet>
 
-      <div className="AboutPage min-h-screen w-full 
-        bg-white dark:bg-black 
+      {/* Main Layout */}
+      <main
+        className="w-full min-h-screen
+        bg-light dark:bg-dark 
         text-gray-900 dark:text-gray-100 
-        flex flex-col"
+        overflow-x-hidden"
       >
-        {/* main content grow kare */}
-        <main className="grow">
-          <Introduction />
-          <Vision/>
-        </main>
+        {/* Sections */}
+        <Introduction />
+        <Vision />
+        <Features />
+        <AboutDev />
+        <TechStack />
 
         {/* Footer */}
         <Footer />
-      </div>
+      </main>
     </>
   )
 }

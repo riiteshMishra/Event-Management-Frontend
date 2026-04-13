@@ -7,7 +7,7 @@ const container = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.15,
     },
   },
 }
@@ -17,21 +17,21 @@ const item = {
   show: { opacity: 1, y: 0 },
 }
 
-const Vision = () => {
+const Features = () => {
   return (
     <>
       {/* SEO */}
       <Helmet>
-        <title>Our Vision | Village Event Management System</title>
+        <title>Features | Village Event Management System</title>
 
-        <meta 
-          name="description" 
-          content="Our vision is to simplify event management for villages like Belwa, Balua, and Bhitiyahawa." 
+        <meta
+          name="description"
+          content="Features of a village event management system for Belwa, Balua, and Bhitiyahawa."
         />
 
         {/* Open Graph */}
-        <meta property="og:title" content="Our Vision | Village Event System" />
-        <meta property="og:description" content="Digital solutions for village communities." />
+        <meta property="og:title" content="Features | Village Event System" />
+        <meta property="og:description" content="Explore features like event creation, announcements, and dashboards." />
         <meta property="og:type" content="website" />
       </Helmet>
 
@@ -43,21 +43,21 @@ const Vision = () => {
         viewport={{ once: true }}
         className="w-full py-20 px-6 
         bg-gradient-to-br 
-        from-gray-50 via-gray-100 to-gray-200 
+        from-white via-gray-100 to-gray-200 
         dark:from-[#0a0a0a] dark:via-[#111827] dark:to-black 
         text-gray-900 dark:text-gray-100 
         transition-all duration-500"
       >
-        <div className="max-w-5xl mx-auto text-center">
-          
+        <div className="max-w-6xl mx-auto text-center">
+
           {/* Heading */}
           <motion.h2
             variants={item}
             className="text-3xl md:text-5xl font-bold mb-6"
           >
-            Our{" "}
+            Village{" "}
             <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
-              Vision
+              Features
             </span>
           </motion.h2>
 
@@ -66,43 +66,54 @@ const Vision = () => {
             variants={item}
             className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-12"
           >
-            Our vision is to bring simple digital solutions to villages like <b>Belwa, Balua, and Bhitiyahawa</b>. 
-            We want to make it easy for people to organize weddings, festivals, meetings, and community events 
-            without confusion or manual effort.
+            This system provides simple and useful features for villages like <b>Belwa, Balua, and Bhitiyahawa</b>
+            to manage events easily and keep everyone informed.
           </motion.p>
 
-          {/* Cards */}
+          {/* Features Grid */}
           <motion.div
             variants={container}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
           >
             {[
               {
-                title: "Easy to Use",
-                desc: "Simple system so everyone in the village can use it without difficulty.",
+                title: "Create Events",
+                desc: "Create local events like weddings, festivals, and meetings easily.",
               },
               {
-                title: "Community Focus",
-                desc: "Connecting people and helping them stay updated about local events.",
+                title: "Manage People",
+                desc: "Keep track of attendees and participants in village events.",
               },
               {
-                title: "Better Coordination",
-                desc: "Making event planning smooth and organized for everyone.",
+                title: "Announcements",
+                desc: "Share important updates about events with all villagers.",
               },
-            ].map((card, i) => (
+              {
+                title: "Event Updates",
+                desc: "Get real-time updates about changes in events or schedules.",
+              },
+              {
+                title: "Simple Dashboard",
+                desc: "Easy-to-use dashboard for managing all village activities.",
+              },
+              {
+                title: "Secure System",
+                desc: "Your data is safe and managed properly.",
+              },
+            ].map((feature, index) => (
               <motion.div
-                key={i}
+                key={index}
                 variants={item}
-                whileHover={{ scale: 1.06, y: -6 }}
+                whileHover={{ scale: 1.05, y: -6 }}
                 whileTap={{ scale: 0.97 }}
                 className="bg-white/70 dark:bg-gray-900/80 backdrop-blur-md 
                 p-6 rounded-xl shadow-lg transition-all duration-300"
               >
                 <h3 className="text-xl font-semibold mb-2">
-                  {card.title}
+                  {feature.title}
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300">
-                  {card.desc}
+                  {feature.desc}
                 </p>
               </motion.div>
             ))}
@@ -114,4 +125,4 @@ const Vision = () => {
   )
 }
 
-export default Vision
+export default Features

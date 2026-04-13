@@ -1,107 +1,143 @@
 import React from "react";
-// FIX: react-helmet ko replace kiya react-helmet-async se
 import { Helmet } from "react-helmet-async";
+import { motion } from "framer-motion";
+
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0 },
+};
 
 const Introduction = () => {
   return (
     <>
-      {/*  SEO Meta Tags */}
+      {/* SEO */}
       <Helmet>
-        <title>Event Management System | Manage Events Easily</title>
+        <title>Village Event Management System | Belwa Balua Bhitiyahawa</title>
 
-        {/* description clean kiya */}
         <meta
           name="description"
-          content="Create, organize, and manage events easily with our modern event management system."
+          content="Manage village events like weddings, festivals, and meetings easily in Belwa, Balua, and Bhitiyahawa."
         />
 
-        <meta name="keywords" content="event management, event booking, event dashboard, MERN project" />
-
-        {/* Open Graph (SEO + sharing) */}
-        <meta property="og:title" content="Event Management System" />
-        <meta property="og:description" content="Manage events effortlessly with our platform." />
+        <meta property="og:title" content="Village Event Management System" />
+        <meta
+          property="og:description"
+          content="A digital solution for managing village events easily."
+        />
         <meta property="og:type" content="website" />
       </Helmet>
 
-      <div
-        className="w-full min-h-screen 
-        bg-linear-to-br 
+      {/* Semantic Section */}
+      <motion.section
+        variants={container}
+        initial="hidden"
+        animate="show"
+        className="w-full py-10 px-6 
+        bg-gradient-to-br 
         from-white via-gray-100 to-gray-200 
         dark:from-black dark:via-gray-900 dark:to-gray-800 
         text-black dark:text-white 
-        flex items-center justify-center px-6 transition-colors duration-500 py-6"
+        flex justify-center transition-colors duration-500"
       >
         <div className="max-w-5xl text-center">
-          
-          {/* Heading */}
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            Manage Your Events <br />
-            <span className="bg-linear-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
-              Effortlessly
-            </span>
-          </h1>
 
-          {/* Description */}
-          <p className="text-gray-600 dark:text-gray-300 text-lg md:text-xl mb-8">
-            Our Event Management System helps you create, organize, and manage events seamlessly.
-            From registrations to tracking participants, everything is handled in one place.
-          </p>
+          {/* Header */}
+          <header>
+            {/* Heading */}
+            <motion.h1
+              variants={item}
+              className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
+            >
+              Manage Village Events <br />
+              <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
+                Easily
+              </span>
+            </motion.h1>
 
-          {/* Buttons */}
-          <div className="flex flex-col md:flex-row gap-4 justify-center">
-            
-            {/* FIX: accessibility added */}
-            <button
-              aria-label="Get Started"
-              className="bg-blue-600 hover:bg-blue-700 hover:scale-105 
-              px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg"
+            {/* Description */}
+            <motion.p
+              variants={item}
+              className="text-gray-700 dark:text-gray-300 text-lg md:text-xl mb-8"
+            >
+              This system is specially designed for villages like{" "}
+              <strong>Belwa, Balua, and Bhitiyahawa</strong>.
+              It helps people organize weddings, festivals, and meetings easily without confusion.
+            </motion.p>
+          </header>
+
+          {/* Navigation Actions */}
+          <motion.nav
+            variants={item}
+            className="flex flex-col md:flex-row gap-4 justify-center"
+          >
+            <motion.button
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-blue-600 hover:bg-blue-700 
+              px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg cursor-pointer"
             >
               Get Started
-            </button>
+            </motion.button>
 
-            <button
-              aria-label="Learn More"
+            <motion.button
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.95 }}
               className="border border-gray-400 dark:border-gray-500 
-              hover:border-black dark:hover:border-white 
-              hover:scale-105 px-6 py-3 rounded-lg font-semibold transition-all duration-300"
+              hover:border-black dark:hover:border-white cursor-pointer
+              px-6 py-3 rounded-lg font-semibold transition-all duration-300"
             >
               Learn More
-            </button>
-          </div>
+            </motion.button>
+          </motion.nav>
 
-          {/* Features */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
-            
-            <div className="bg-white/70 dark:bg-gray-900/80 backdrop-blur-md 
-              p-6 rounded-xl shadow-lg hover:scale-105 hover:shadow-2xl 
-              transition-all duration-300">
-              <h3 className="text-xl font-semibold mb-2">Create Events</h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                Easily create and manage events with a user-friendly interface.
-              </p>
-            </div>
+          {/* Features Section */}
+          <motion.div
+            variants={container}
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16"
+          >
+            {[
+              {
+                title: "Create Events",
+                desc: "Easily create and manage local events like weddings and festivals.",
+              },
+              {
+                title: "Manage People",
+                desc: "Keep track of participants and attendees in village events.",
+              },
+              {
+                title: "Announcements",
+                desc: "Share important updates about meetings and events with everyone.",
+              },
+            ].map((feature, i) => (
+              <motion.article
+                key={i}
+                variants={item}
+                whileHover={{ scale: 1.05, y: -5 }}
+                whileTap={{ scale: 0.97 }}
+                className="bg-white/70 dark:bg-gray-900/80 backdrop-blur-md 
+                p-6 rounded-xl shadow-lg transition-all duration-300"
+              >
+                <h3 className="text-xl font-semibold mb-2">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-700 dark:text-gray-300">
+                  {feature.desc}
+                </p>
+              </motion.article>
+            ))}
+          </motion.div>
 
-            <div className="bg-white/70 dark:bg-gray-900/80 backdrop-blur-md 
-              p-6 rounded-xl shadow-lg hover:scale-105 hover:shadow-2xl 
-              transition-all duration-300">
-              <h3 className="text-xl font-semibold mb-2">Manage Users</h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                Handle registrations, participants, and attendees efficiently.
-              </p>
-            </div>
-
-            <div className="bg-white/70 dark:bg-gray-900/80 backdrop-blur-md 
-              p-6 rounded-xl shadow-lg hover:scale-105 hover:shadow-2xl 
-              transition-all duration-300">
-              <h3 className="text-xl font-semibold mb-2">Track Analytics</h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                Get insights and monitor event performance in real-time.
-              </p>
-            </div>
-
-          </div>
         </div>
-      </div>
+      </motion.section>
     </>
   );
 };
