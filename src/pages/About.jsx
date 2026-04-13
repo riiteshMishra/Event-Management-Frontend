@@ -4,6 +4,7 @@ import Introduction from '../components/core/About/Introduction'
 
 // FIX: SEO ke liye Helmet add kiya
 import { Helmet } from "react-helmet-async"
+import Vision from '../components/core/About/Vision'
 
 const About = () => {
   return (
@@ -25,6 +26,7 @@ const About = () => {
         {/* main content grow kare */}
         <main className="grow">
           <Introduction />
+          <Vision/>
         </main>
 
         {/* Footer */}
