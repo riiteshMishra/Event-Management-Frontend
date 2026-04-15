@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import Event from "./pages/Event";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
+import SlugEventPage from "./components/core/Event/SlugEvent";
 
 const App = () => {
   const { theme } = useSelector((state) => state.theme);
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/events" element={<Event />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/events/:slug" element={<SlugEventPage/>}/>
         {/* <Route path="/"/> */}
       </Routes>
     </div>

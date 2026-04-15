@@ -4,7 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently -n \"client,server\" -c \"bgGreen.bold,bgYellow.bold\" \"npm run frontend\" \"npm run backend\"",
+    "frontend": "vite",
+    "backend": "cd server && npm run dev",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -15,6 +17,7 @@
     "@tailwindcss/vite": "^4.2.2",
     "axios": "^1.13.6",
     "clsx": "^2.1.1",
+    "concurrently": "^9.2.1",
     "motion": "^12.38.0",
     "react": "^19.2.4",
     "react-countup": "^6.5.3",
