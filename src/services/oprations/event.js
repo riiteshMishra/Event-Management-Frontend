@@ -36,9 +36,12 @@ export const getEventBySlug = async (slug) => {
 
         console.log("GET EVENT BY SLUG API RESPONSE", response);
         toast.success(response?.data?.message || "Event Feched successfully");
-        return result = response?.data?.data
+        result = response?.data?.data
     } catch (err) {
         console.log(err.message);
         toast.error(err.message)
+    } finally {
+        // eslint-disable-next-line no-unsafe-finally
+        return result
     }
 }
