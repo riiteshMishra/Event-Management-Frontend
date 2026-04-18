@@ -10,7 +10,7 @@ import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import SlugEventPage from "./components/core/Event/SlugEvent";
 import { Helmet } from "react-helmet-async";
-import PrivacyPolicy from "./pages/Privacypolicy";
+import PrivacyPolicy from "./pages/Policy";
 
 const App = () => {
   const { theme } = useSelector((state) => state.theme);
