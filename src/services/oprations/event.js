@@ -19,8 +19,6 @@ export const getEvents = async () => {
     } catch (err) {
         console.log("ERROR WHILE FETCHING EVENTS", err);
         toast.error(err.message);
-        throw new Error("Event fetching failed");
-
     } finally {
         toast.dismiss(toastId)
     }
