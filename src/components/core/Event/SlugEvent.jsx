@@ -28,7 +28,7 @@ const SlugEventPage = () => {
   return (
     <>
       <Helmet>
-        <title>{event ? event.title : "Event Details"}</title>
+        <title>{event?.title || "Event Details"}</title>
 
         <meta
           name="description"
@@ -37,18 +37,19 @@ const SlugEventPage = () => {
           }
         />
 
-        {/* Open Graph (for WhatsApp / Facebook sharing) */}
-        <meta property="og:title" content={event?.title} />
-        <meta property="og:description" content={event?.description} />
-        <meta property="og:image" content={event?.thumbnail} />
+        <meta property="og:title" content={event?.title || "Event"} />
+        <meta property="og:description" content={event?.description || ""} />
+        <meta property="og:image" content={event?.thumbnail || "/fallback.jpg"} />
       </Helmet>
+
+
       <section className='bg-light dark:bg-dark/95'>
         <div className="max-w-6xl mx-auto px-4 py-8 ">
 
           {
             loading ? <EventSkeleton /> :
 
-              event.length < 1 ? <NoEvents /> :
+              !event ? <NoEvents /> :
 
                 <div className="space-y-8">
 
