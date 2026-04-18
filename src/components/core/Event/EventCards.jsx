@@ -27,7 +27,7 @@ const EventCards = ({ events }) => {
       animate="visible"
       className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
     >
-      {events.map((event) => (
+      {events?.map((event) => (
         <Link key={event._id} to={`/events/${event?.slug}`}>
           <motion.div
             variants={cardVariants}
