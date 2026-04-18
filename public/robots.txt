@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Optional: block unnecessary crawling load (SEO pe impact nahi)
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://event-management-frontend-one-cyan.vercel.app/sitemap.xml

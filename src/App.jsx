@@ -9,6 +9,7 @@ import Event from "./pages/Event";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import SlugEventPage from "./components/core/Event/SlugEvent";
+import { Helmet } from "react-helmet-async";
 
 const App = () => {
   const { theme } = useSelector((state) => state.theme);
@@ -18,19 +19,25 @@ const App = () => {
   }, [theme]);
 
   return (
-    <div className="App_Entry min-h-screen w-full overflow-x-hidden relative z-0">
-      <Header />
-      <Routes>
-        <Route path="*" element={<PageNotFound />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/events" element={<Event />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/events/:slug" element={<SlugEventPage/>}/>
-        {/* <Route path="/"/> */}
-      </Routes>
-    </div>
+    <>
+      <Helmet>
+        <meta name="robots" content="index, follow" />
+      </Helmet>
+
+      <div className="App_Entry min-h-screen w-full overflow-x-hidden relative z-0">
+        <Header />
+        <Routes>
+          <Route path="*" element={<PageNotFound />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/events" element={<Event />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/events/:slug" element={<SlugEventPage />} />
+          {/* <Route path="/"/> */}
+        </Routes>
+      </div>
+    </>
   );
 };
 
