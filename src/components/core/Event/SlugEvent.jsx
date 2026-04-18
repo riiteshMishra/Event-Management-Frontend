@@ -7,7 +7,7 @@ import NoEvents from './NoEvents';
 import { Helmet } from "react-helmet-async";
 const SlugEventPage = () => {
   const { slug } = useParams();
-  const [event, setEvent] = useState(null);
+  const [event, setEvent] = useState([]);
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
@@ -48,33 +48,33 @@ const SlugEventPage = () => {
           {
             loading ? <EventSkeleton /> :
 
-              !event ? <NoEvents /> :
+              event.length < 1 ? <NoEvents /> :
 
                 <div className="space-y-8">
 
                   {/* Header Section */}
                   <div className="bg-white shadow-md rounded-2xl overflow-hidden">
                     <img
-                      src={event.thumbnail}
-                      alt={event.title}
+                      src={event?.thumbnail}
+                      alt={event?.title}
                       className="w-full h-[300px] object-cover"
                     />
 
                     <div className="p-6 space-y-3">
                       <h1 className="text-3xl font-bold text-gray-800">
-                        {event.title}
+                        {event?.title}
                       </h1>
 
                       <p className="text-gray-600">
-                        {event.description}
+                        {event?.description}
                       </p>
 
                       {/* Status Badge */}
-                      <span className={`inline-block px-3 py-1 text-sm rounded-full ${event.status === "completed"
+                      <span className={`inline-block px-3 py-1 text-sm rounded-full ${event?.status === "completed"
                         ? "bg-red-100 text-red-600"
                         : "bg-green-100 text-green-600"
                         }`}>
-                        {event.status}
+                        {event?.status}
                       </span>
                     </div>
                   </div>
@@ -82,21 +82,21 @@ const SlugEventPage = () => {
                   {/* Details Card */}
                   <div className="bg-white shadow-md rounded-2xl p-6 grid grid-cols-1 md:grid-cols-2 gap-4">
 
-                    <p><b>Village:</b> {event.village}</p>
-                    <p><b>District:</b> {event.district}</p>
-                    <p><b>State:</b> {event.state}</p>
+                    <p><b>Village:</b> {event?.village}</p>
+                    <p><b>District:</b> {event?.district}</p>
+                    <p><b>State:</b> {event?.state}</p>
 
                     <p>
                       <b>Start:</b>{" "}
-                      {event.startDate
-                        ? new Date(event.startDate).toLocaleString()
+                      {event?.startDate
+                        ? new Date(event?.startDate).toLocaleString()
                         : "N/A"}
                     </p>
 
                     <p>
                       <b>End:</b>{" "}
-                      {event.endDate
-                        ? new Date(event.endDate).toLocaleString()
+                      {event?.endDate
+                        ? new Date(event?.endDate).toLocaleString()
                         : "N/A"}
                     </p>
 
@@ -110,8 +110,8 @@ const SlugEventPage = () => {
                     </h2>
 
                     <ul className="list-disc ml-6 space-y-1 text-gray-600">
-                      {event.instructions?.length > 0 ? (
-                        event.instructions.map((item, index) => (
+                      {event?.instructions?.length > 0 ? (
+                        event?.instructions?.map((item, index) => (
                           <li key={index}>{item}</li>
                         ))
                       ) : (
@@ -123,9 +123,9 @@ const SlugEventPage = () => {
 
                   {/* Candidates */}
                   {
-                    event.type === "election" && <CandidateCard
-                      candidates={event.candidates}
-                      status={event.status}
+                    event?.type === "election" && <CandidateCard
+                      candidates={event?.candidates}
+                      status={event?.status}
                     />
                   }
 
