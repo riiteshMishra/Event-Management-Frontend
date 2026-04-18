@@ -10,6 +10,7 @@ import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import SlugEventPage from "./components/core/Event/SlugEvent";
 import { Helmet } from "react-helmet-async";
+import PrivacyPolicy from "./pages/Privacypolicy";
 
 const App = () => {
   const { theme } = useSelector((state) => state.theme);
@@ -34,7 +35,8 @@ const App = () => {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/events/:slug" element={<SlugEventPage />} />
-          {/* <Route path="/"/> */}
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+
         </Routes>
       </div>
     </>
